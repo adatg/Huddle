@@ -3,6 +3,16 @@
   padding: 0;
   box-sizing: border-box; }
 
+*, ::after, ::before {
+  box-sizing: border-box; }
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-left: 1px solid #f7f9fd; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff52bf; }
+
 body {
   font-size: 1.1rem;
   font-family: "Open Sans", sans-serif;
@@ -145,13 +155,19 @@ nav, footer {
   padding: 3rem 1rem; }
 
 .svg-container {
-  display: flex;
-  width: 100%; }
+  display: flex; }
   .svg-container svg {
-    position: absolute; }
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    align-self: center; }
 
 nav .svg-container {
-  width: 50%; }
+  width: 20rem;
+  padding-right: 4rem; }
+
+footer .svg-container {
+  width: 12em; }
 
 .btn {
   background-color: #ff52bf;
@@ -162,7 +178,8 @@ nav .svg-container {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer; }
+  cursor: pointer;
+  white-space: nowrap; }
   .btn.btn-secondary {
     background-color: #f7f9fd;
     color: #9a52ff;
@@ -258,6 +275,12 @@ footer {
     footer .container .attribution a {
       color: #ff52bf; }
 
+@media (min-width: 1800px) {
+  body {
+    font-size: 1.6em; }
+
+  footer .container ul.icon-list {
+    max-width: 170px; } }
 @media (max-width: 950px) {
   .col {
     width: 100%; }
@@ -276,9 +299,9 @@ footer {
       padding: 0 !important; }
 
   footer .container .svg-container {
-    margin-bottom: 4rem;
-    margin-top: 4rem;
-    justify-content: center; }
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin: 0 auto; }
   footer .container .col-25 {
     text-align: center;
     margin-top: 4rem; }
@@ -291,7 +314,7 @@ footer {
   footer .container .attribution {
     text-align: center;
     padding-top: 0; } }
-@media (max-width: 490px) {
+@media (max-width: 600px) {
   h1 {
     font-size: 1.9rem; }
 
@@ -316,11 +339,30 @@ footer {
     nav .container {
       padding-right: 2rem;
       padding-left: 2rem; }
+    nav .svg-container {
+      padding-right: 7rem; }
+    nav .btn {
+      padding: 0.5rem 2rem; }
 
   .card {
     padding: 3rem 2rem; }
 
   footer {
     padding: 2rem 0rem; } }
+@media (max-width: 380px) {
+  body, p.subtitle {
+    font-size: 1rem; }
+
+  h1 {
+    font-size: 1.4rem; }
+
+  nav .svg-container {
+    padding-right: 2rem; }
+
+  #CTA .container {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+    #CTA .container .card {
+      padding: 3rem 1rem; } }
 
 /*# sourceMappingURL=stylesheet.css.map */

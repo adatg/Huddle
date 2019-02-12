@@ -29,6 +29,19 @@ $spacing-smaller: 2rem;
     box-sizing: border-box
 }
 
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-left: 1px solid $color-bg; 
+}
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: $color-primary; 
+}
+
 body {
     font-size: $font-size-main;
     font-family: $font-body;
@@ -209,15 +222,24 @@ nav, footer {
 
 .svg-container {
     display: flex;
-    width: 100%;
     svg {
-        position: absolute;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        align-self: center;
     }
 }
 
 nav {
     .svg-container {
-        width: 50%;
+        width: 20rem;
+        padding-right: ($spacing-smaller * 2);
+    }
+}
+
+footer {
+    .svg-container {
+        width: 12em;
     }
 }
 
@@ -231,6 +253,7 @@ nav {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
+    white-space: nowrap;
     &.btn-secondary {
         background-color: $color-bg;
         color: $color-secondary;
@@ -291,19 +314,15 @@ p {
 }
 
 #about {
-
     li {
         margin-bottom: $spacing;
     }
-
     img {
         align-self: center;
     }
-
     .col-50:nth-child(1) {
         padding-left: ($spacing-smaller + 2rem);
     }
-
     .col-50:nth-child(2) {
         padding-left: ($spacing * 2);
         padding-right: ($spacing + 2rem);
@@ -369,6 +388,21 @@ footer {
     }  
 }
 
+@media (min-width: 1800px) {
+    body {
+        font-size: 1.6em;
+    }
+    footer {
+        .container {
+            ul {
+                &.icon-list {
+                    max-width: 170px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 950px) {
     .col {
         width: 100%;
@@ -394,9 +428,9 @@ footer {
     footer {
         .container {
             .svg-container {
-                margin-bottom: ($spacing-smaller * 2);
-                margin-top: ($spacing-smaller * 2);
-                justify-content: center;
+                padding-top: ($spacing-smaller * 2);
+                padding-bottom: ($spacing-smaller * 2);
+                margin: 0 auto;
             }
             .col-25 {
                 text-align: center;
@@ -419,7 +453,7 @@ footer {
     }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 600px) {
 
     h1 {
         font-size: 1.9rem;
@@ -440,8 +474,6 @@ footer {
     .btn {
         font-size: ($font-size-main - .3rem);
     }
-    
-
     .container {
         padding-left: $spacing-smaller;
         padding-right: $spacing-smaller;
@@ -452,6 +484,12 @@ footer {
         padding-right: $spacing-smaller;
         padding-left: $spacing-smaller;
         }
+        .svg-container {
+            padding-right: ($spacing + 4rem);
+        }
+        .btn {
+            padding: ($spacing-smaller / 4) $spacing-smaller;
+        }
     }
 
     .card {
@@ -460,5 +498,28 @@ footer {
 
     footer {
         padding: $spacing-smaller  0rem;
+    }
+}
+
+@media (max-width: 380px) {
+    body, p.subtitle {
+        font-size: ($font-size-main - .1rem);
+    }
+    h1 {
+        font-size: ($font-size-main + .3rem);
+    }
+    nav {
+        .svg-container {
+        padding-right: $spacing-smaller;
+        }
+    }
+    #CTA {
+        .container {
+            padding-left: ($spacing-smaller / 2);
+            padding-right: ($spacing-smaller / 2);
+            .card {
+                padding: 3rem 1rem;
+            }
+        }
     }
 }
