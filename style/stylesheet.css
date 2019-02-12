@@ -8,7 +8,7 @@
 
 ::-webkit-scrollbar {
   width: 6px;
-  border-left: 1px solid #f7f9fd; }
+  background-color: #f7f9fd; }
 
 ::-webkit-scrollbar-thumb {
   background-color: #ff52bf; }
@@ -18,7 +18,8 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #808d99;
   background-color: #f7f9fd;
-  width: 100%; }
+  width: 100%;
+  overflow-x: hidden; }
 
 .container {
   width: 100%;
@@ -116,36 +117,32 @@ a {
 .ml-3 {
   margin-left: 3rem; }
 
-.bg {
+main:before {
+  background: #fff;
+  top: 51.5%;
+  left: 11.4%;
+  width: 55rem;
+  height: 70rem;
+  transform: rotate(61deg);
+  content: '';
   position: absolute;
-  width: 100%;
-  height: calc(100vh + 50em);
-  overflow: hidden;
+  border-radius: 90px;
   z-index: -1; }
-  .bg:before {
-    background: #fff;
-    top: 17.8em;
-    left: 8.2em;
-    width: 55rem;
-    height: 70rem;
-    transform: rotate(61deg);
-    content: '';
-    position: absolute;
-    border-radius: 90px; }
-  .bg:after {
-    background: #ff52bf;
-    background: -moz-linear-gradient(-45deg, #ff52bf 0%, #9a52ff 100%);
-    background: -webkit-linear-gradient(-45deg, #ff52bf 0%, #9a52ff 100%);
-    background: linear-gradient(135deg, #ff52bf 0%, #9a52ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff52bf', endColorstr='#9a52ff',GradientType=1 );
-    width: 98rem;
-    height: 76rem;
-    transform: rotate(51deg);
-    top: -20.8em;
-    left: 33.6em;
-    content: '';
-    position: absolute;
-    border-radius: 90px; }
+main:after {
+  background: #ff52bf;
+  background: -moz-linear-gradient(-45deg, #ff52bf 0%, #9a52ff 100%);
+  background: -webkit-linear-gradient(-45deg, #ff52bf 0%, #9a52ff 100%);
+  background: linear-gradient(135deg, #ff52bf 0%, #9a52ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff52bf', endColorstr='#9a52ff',GradientType=1 );
+  width: 98rem;
+  height: 76rem;
+  transform: rotate(51deg);
+  top: -60%;
+  left: 46%;
+  content: '';
+  position: absolute;
+  border-radius: 90px;
+  z-index: -1; }
 
 .section {
   padding-top: 4rem;

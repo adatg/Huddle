@@ -35,7 +35,7 @@ $spacing-smaller: 2rem;
 
 ::-webkit-scrollbar {
     width: 6px;
-    border-left: 1px solid $color-bg; 
+    background-color: $color-bg; 
 }
   
   ::-webkit-scrollbar-thumb {
@@ -48,6 +48,7 @@ body {
     color: $color-body;
     background-color: $color-bg;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
@@ -177,22 +178,23 @@ a {
 
 //Site components
 
-.bg {
-    position: absolute;
-    width: 100%;
-    height: calc(100vh + 50em);
-    overflow: hidden;
-    z-index: -1;
+main {
+    // position: absolute;
+    // width: 100%;
+    // height: calc(100vh + 50em);
+    // overflow-x: hidden;
+    // z-index: -1;
     &:before {
         background: #fff;
-        top: 17.8em;
-        left: 8.2em;
+        top: 51.5%;
+        left: 11.4%;
         width: 55rem;
         height: 70rem;
         transform: rotate(61deg);
         content: '';
         position: absolute;
         border-radius: 90px;
+        z-index: -1;
     }
     &:after {
         background: $color-primary;
@@ -203,11 +205,12 @@ a {
         width: 98rem;
         height: 76rem;
         transform: rotate(51deg);
-        top: -20.8em;
-        left: 33.6em; 
+        top: -60%;
+        left: 46%;
         content: ''; 
         position: absolute;
         border-radius: 90px;
+        z-index: -1;
     }
 }
 
