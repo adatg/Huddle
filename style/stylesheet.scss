@@ -1,7 +1,7 @@
 // - Mobile: 375px
 // - Desktop: 1440px
 
-// General style
+// Style variables
 $font-size-main: 1.1rem;
 $font-size-small: 0.8rem;
 $font-heading: 'Poppins', sans-serif;
@@ -21,7 +21,7 @@ $shadow-color-primary: 0px 0px 10px 0px $color-primary;
 $spacing: 3rem; 
 $spacing-smaller: 2rem;
 
-//General styling
+//General styling and layout
 
 * {
     margin: 0;
@@ -49,6 +49,11 @@ body {
     background-color: $color-bg;
     width: 100%;
     overflow-x: hidden;
+}
+
+.section {
+    padding-top: ($spacing-smaller * 2);
+    padding-bottom: ($spacing-smaller * 2);
 }
 
 .container {
@@ -108,40 +113,26 @@ a {
     color: inherit;
 }
 
-.push-right {
-    margin-right: auto;
-}
+// Helper classes
 
-.push-left {
-    margin-left: auto;
+.d-flex {
+    display: flex;
 }
 
 .flex-row {
     flex-direction: row;
 }
 
-.d-flex {
-    display: flex;
-}
-
-.d-mobile {
-    display: none;
-}
-
 .flex-col {
     flex-direction: column;
 }
 
-.text-center {
-    text-align: center;
-}
-
-.text-small {
-    font-size: $font-size-small;
-}
-
 .justify-center {
     justify-content: center;
+}
+
+.d-mobile {
+    display: none;
 }
 
 .pr-2 {
@@ -176,14 +167,25 @@ a {
     margin-left: $spacing;
 }
 
+.push-right {
+    margin-right: auto;
+}
+
+.push-left {
+    margin-left: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-small {
+    font-size: $font-size-small;
+}
+
 //Site components
 
 main {
-    // position: absolute;
-    // width: 100%;
-    // height: calc(100vh + 50em);
-    // overflow-x: hidden;
-    // z-index: -1;
     &:before {
         background: #fff;
         top: 51.5%;
@@ -214,15 +216,6 @@ main {
     }
 }
 
-.section {
-    padding-top: ($spacing-smaller * 2);
-    padding-bottom: ($spacing-smaller * 2);
-}
-
-nav, footer {
-    padding: $spacing ($spacing-smaller / 2);
-}
-
 .svg-container {
     display: flex;
     svg {
@@ -240,10 +233,8 @@ nav {
     }
 }
 
-footer {
-    .svg-container {
-        width: 12em;
-    }
+nav, footer {
+    padding: $spacing ($spacing-smaller / 2);
 }
 
 .btn {
@@ -272,6 +263,10 @@ input {
     display: block;
     margin-bottom: ($spacing-smaller / 2);
     border: none;
+}
+
+.btn, .card, input {
+    border-radius: $border-radius;
 }
 
 h1, h2, h3 {
@@ -343,10 +338,6 @@ p {
     }
 }
 
-.btn, .card, input {
-    border-radius: $border-radius;
-}
-
 footer {
     background-color: $color-heading;
     color: $color-bg;
@@ -355,6 +346,7 @@ footer {
     .container {
         .svg-container {
             margin-bottom: ($spacing + 1rem);
+            width: 12em;
             svg {
                 path {
                 fill: #fff;
@@ -371,7 +363,6 @@ footer {
                 line-height: 2.5; 
             }
         }  
-
         .copy, .text-small {
             margin-top: ($spacing-smaller - .5rem)
         }
@@ -391,6 +382,7 @@ footer {
     }  
 }
 
+// Media queries
 @media (min-width: 1800px) {
     body {
         font-size: 1.6em;
@@ -410,15 +402,12 @@ footer {
     .col {
         width: 100%;
     }
-
     .d-desktop {
         display: none;
     }
-
     .d-mobile {
         display: block;
     }
-
     #about {
         text-align: center; 
         .col-50:nth-child(1) {
@@ -457,7 +446,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-
     h1 {
         font-size: 1.9rem;
     }
@@ -494,11 +482,9 @@ footer {
             padding: ($spacing-smaller / 4) $spacing-smaller;
         }
     }
-
     .card {
         padding: $spacing $spacing-smaller;
     }
-
     footer {
         padding: $spacing-smaller  0rem;
     }
@@ -516,7 +502,7 @@ footer {
         padding-right: $spacing-smaller;
         }
     }
-    #CTA {
+    #cta {
         .container {
             padding-left: ($spacing-smaller / 2);
             padding-right: ($spacing-smaller / 2);

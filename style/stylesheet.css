@@ -21,6 +21,10 @@ body {
   width: 100%;
   overflow-x: hidden; }
 
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
+
 .container {
   width: 100%;
   padding-right: 3rem;
@@ -66,32 +70,20 @@ a {
   text-decoration: none;
   color: inherit; }
 
-.push-right {
-  margin-right: auto; }
-
-.push-left {
-  margin-left: auto; }
+.d-flex {
+  display: flex; }
 
 .flex-row {
   flex-direction: row; }
 
-.d-flex {
-  display: flex; }
-
-.d-mobile {
-  display: none; }
-
 .flex-col {
   flex-direction: column; }
 
-.text-center {
-  text-align: center; }
-
-.text-small {
-  font-size: 0.8rem; }
-
 .justify-center {
   justify-content: center; }
+
+.d-mobile {
+  display: none; }
 
 .pr-2 {
   padding-right: 2rem; }
@@ -116,6 +108,18 @@ a {
 
 .ml-3 {
   margin-left: 3rem; }
+
+.push-right {
+  margin-right: auto; }
+
+.push-left {
+  margin-left: auto; }
+
+.text-center {
+  text-align: center; }
+
+.text-small {
+  font-size: 0.8rem; }
 
 main:before {
   background: #fff;
@@ -144,13 +148,6 @@ main:after {
   border-radius: 90px;
   z-index: -1; }
 
-.section {
-  padding-top: 4rem;
-  padding-bottom: 4rem; }
-
-nav, footer {
-  padding: 3rem 1rem; }
-
 .svg-container {
   display: flex; }
   .svg-container svg {
@@ -163,8 +160,8 @@ nav .svg-container {
   width: 20rem;
   padding-right: 4rem; }
 
-footer .svg-container {
-  width: 12em; }
+nav, footer {
+  padding: 3rem 1rem; }
 
 .btn {
   background-color: #ff52bf;
@@ -189,6 +186,9 @@ input {
   display: block;
   margin-bottom: 1rem;
   border: none; }
+
+.btn, .card, input {
+  border-radius: 5px; }
 
 h1, h2, h3 {
   color: #00252e;
@@ -241,16 +241,14 @@ p {
   .card p {
     margin-bottom: 3rem; }
 
-.btn, .card, input {
-  border-radius: 5px; }
-
 footer {
   background-color: #00252e;
   color: #f7f9fd;
   margin-top: 10rem;
   padding-top: 5.5rem; }
   footer .container .svg-container {
-    margin-bottom: 4rem; }
+    margin-bottom: 4rem;
+    width: 12em; }
     footer .container .svg-container svg path {
       fill: #fff; }
   footer .container ul {
@@ -356,10 +354,10 @@ footer {
   nav .svg-container {
     padding-right: 2rem; }
 
-  #CTA .container {
+  #cta .container {
     padding-left: 1rem;
     padding-right: 1rem; }
-    #CTA .container .card {
+    #cta .container .card {
       padding: 3rem 1rem; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
